@@ -1,0 +1,195 @@
+{
+    "secretaire": [
+      {
+        "id": "1",
+        "nom": "niass",
+        "prenom": "fatima",
+        "login": "fatima@gmail.com",
+        "password": "1234"
+      }
+    ],
+    "patient": [
+      {
+        "id": "1",
+        "nom": "niass",
+        "prenom": "abdou",
+        "login": "abdou@gmail.com",
+        "password": "1111"
+      },
+      {
+        "id": "2",
+        "nom": "diouf",
+        "prenom": "amina",
+        "login": "amina@gmail.com",
+        "password": "3456"
+      },
+      {
+        "id": "3",
+        "nom": "fall",
+        "prenom": "mariama",
+        "login": "mariama@gmail.com",
+        "password": "5678"
+      },
+      {
+        "id": "4",
+        "nom": "sow",
+        "prenom": "ibrahima",
+        "login": "ibrahima@gmail.com",
+        "password": "9999"
+      },
+      {
+        "id": "5",
+        "nom": "Biteye",
+        "prenom": "Amadou",
+        "login": "amadou@gmail.com",
+        "password": "6666"
+      },
+      {
+        "id": "6",
+        "nom": "Ba",
+        "prenom": "Modou",
+        "login": "modou@gmail.com",
+        "password": "2233"
+      },
+      {
+        "id": "7",
+        "nom": "thioukh",
+        "prenom": "thioukh",
+        "login": "thioukh@gmail.com",
+        "password": "thioukh"
+      },
+      {
+        "id": "8",
+        "nom": "simplon",
+        "prenom": "ROKHAYA",
+        "login": "rokhayatoure2000@gmail.com",
+        "password": "rokhayatoure2000"
+      },
+      {
+        "id": "9",
+        "nom": "Biteye",
+        "prenom": "Mamadou",
+        "login": "mamad@gmail.com",
+        "password": "1151"
+      }
+    ],
+    "medecin": [
+      {
+        "id": "1",
+        "nom": "cissé",
+        "prenom": "moustapha",
+        "specialite": "generaliste",
+        "login": "moutapha@gmail.com",
+        "password": "4444"
+      },
+      {
+        "id": "2",
+        "nom": "kane",
+        "prenom": "demba",
+        "specialite": "dentiste",
+        "login": "demba@gmail.com",
+        "password": "2222"
+      },
+      {
+        "id": "3",
+        "nom": "ba",
+        "prenom": "khadija",
+        "specialite": "cardiologue",
+        "login": "khadija@gmail.com",
+        "password": "3333"
+      },
+      {
+        "id": "4",
+        "nom": "ndiaye",
+        "prenom": "serigne",
+        "specialite": "dermatologue",
+        "login": "serigne@gmail.com",
+        "password": "5555"
+      },
+      {
+        "id": "5",
+        "nom": "Cissé",
+        "prenom": "Barakatou",
+        "specialite": "chirurgie",
+        "login": "brakatou@gmail.com",
+        "password": "8899"
+      },
+      {
+        "id": "6",
+        "nom": "Ka ",
+        "prenom": "Djimba",
+        "specialite": "praticien",
+        "login": "djimba@gmail.com",
+        "password": "5566"
+      }
+    ],
+    "rv": [
+      {
+        "id": "1",
+        "id_medecin": "1",
+        "id_patient": "1",
+        "date": "22/02/2024",
+        "heure": "22:10",
+        "statut": "VALIDER"
+      },
+      {
+        "id": "3",
+        "id_medecin": "2",
+        "id_patient": "3",
+        "date": "23/02/2024",
+        "heure": "10:00",
+        "statut": "VALIDER"
+      },
+      {
+        "id": "4",
+        "id_medecin": "1",
+        "id_patient": "4",
+        "date": "23/02/2024",
+        "heure": "11:30",
+        "statut": "VALIDER"
+      },
+      {
+        "id": "5",
+        "id_medecin": "3",
+        "id_patient": "4",
+        "date": "24/02/2024",
+        "heure": "09:00",
+        "statut": "En cours"
+      },
+      {
+        "id": "6",
+        "id_medecin": "2",
+        "id_patient": "4",
+        "date": "24/02/2024",
+        "heure": "14:00",
+        "statut": "REFUSER"
+      },
+      {
+        "id": "7",
+        "id_patient": "2",
+        "id_medecin": "3",
+        "date": "2025-03-20T01:39"
+      },
+      {
+        "id": "8",
+        "id_patient": "36c9",
+        "id_medecin": "4",
+        "date": "2025-03-09T10:40",
+        "statut": "en_cours"
+      }
+    ],
+    "role": [
+      {
+        "id": "1",
+        "libelle": "medecin"
+      },
+      {
+        "id": "2",
+        "libelle": "patient"
+      },
+      {
+        "id": "1",
+        "libelle": "secretaire"
+      }
+    ]
+  }
