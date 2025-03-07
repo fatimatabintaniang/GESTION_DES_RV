@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let user = localStorage.getItem('user');
 
     if (!user) {
-        window.location.href = "index.html";
+        window.location.href = "connexion.html";
     } else {
         let userData = JSON.parse(user);
         console.log("Utilisateur connecté :", userData);
@@ -15,5 +15,5 @@ document.getElementById("logoutButton").addEventListener("click", function () {
     localStorage.removeItem('user');
 
     // Rediriger vers la page de connexion
-    window.location.href = "index.html";
+    window.location.href = "connexion.html";
 });
