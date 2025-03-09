@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinico - Liste des rendez-vous</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="p-6 bg-gray-50">
+    <!-- Barre d'actions -->
+    <div class="flex justify-between items-center bg-white p-4 rounded-lg shadow">
+        <div>
+            <h2 class="text-xl font-bold">Clinico <span class="text-blue-500 text-sm">Simple et direct</span></h2>
+            <p class="text-gray-500">La liste des rendez-vous</p>
+        </div>
+        <div class="flex space-x-2">
+            <button class="bg-red-100 text-red-600 px-4 py-2 rounded text-sm">❌ Annuler</button>
+            <button class="bg-gray-100 text-gray-600 px-4 py-2 rounded text-sm">⚙️ Filters</button>
+            <button class="bg-gray-100 text-gray-600 px-4 py-2 rounded text-sm">📥 Export</button>
+            <button class="bg-blue-600 text-white px-4 py-2 rounded text-sm">➕ Add new Rv</button>
+        </div>
+    </div>
+
+    <!-- Tableau -->
+    <div class="overflow-x-auto  border rounded-lg shadow bg-white">
+        <table class="min-w-full border">
+            <thead>
+                <tr class="bg-gray-100 text-gray-600 uppercase text-sm">
+                    <th class="py-3 px-6 text-left">
+                        <input type="checkbox" class="w-4 h-4 rounded border-2 border-blue-500 accent-blue-500">
+
+                    </th>
+                    <th class="py-3 px-6 text-left">Date ⬍</th>
+                    <th class="py-3 px-6 text-left">Patient ⬍</th>
+                    <th class="py-3 px-6 text-left">Médecin ⬍</th>
+                    <th class="py-3 px-6 text-left">Motif ⬍</th>
+                    <th class="py-3 px-6 text-left">Action</th>
+                    
+                    
+                </tr>
+            </thead>
+            <tbody class="text-gray-600 text-sm">
+                <!-- Ligne 1 -->
+                <tr class="border-b border-gray-200">
+                    <td class="py-3 px-6"><input type="checkbox" class="w-4 h-4 accent-blue-500"></td>
+                    <td class="py-3 px-6">09/03/2025 à 15h28</td>
+                    <td class="py-3 px-6">Babacar Traoré</td>
+                    <td class="py-3 px-6">Fatima Niang</td>
+                    <td class="py-3 px-6">Consultation générale</td>
+                    <td class="py-3 px-6 flex space-x-2">
+                        <button class="bg-green-200 text-green-800 px-2 py-1 rounded text-xs">✔️ Validé</button>
+                        <button class="bg-red-500 text-white px-2 py-1 rounded text-xs">❌ Annuler</button>
+                    </td>
+                </tr>
+                <!-- Ligne 2 -->
+                <tr class="border-b border-gray-200">
+                    <td class="py-3 px-6"><input type="checkbox" class="w-4 h-4 accent-blue-500"></td>
+                    <td class="py-3 px-6">09/03/2025 à 15h28</td>
+                    <td class="py-3 px-6">Babacar Traoré</td>
+                    <td class="py-3 px-6">Fatima Niang</td>
+                    <td class="py-3 px-6">Consultation</td>
+                    <td class="py-3 px-6 flex space-x-2">
+                        <button class="bg-green-200 text-green-800 px-2 py-1 rounded text-xs">✔️ Validé</button>
+                        <button class="bg-red-500 text-white px-2 py-1 rounded text-xs">❌ Annuler</button>
+                    </td>
+                </tr>
+                <!-- Ligne 3 -->
+                <tr class="border-b border-gray-200">
+                    <td class="py-3 px-6"><input type="checkbox" class="w-4 h-4 accent-blue-500"></td>
+                    <td class="py-3 px-6">09/03/2025 à 15h28</td>
+                    <td class="py-3 px-6">Babacar Traoré</td>
+                    <td class="py-3 px-6">Fatima Niang</td>
+                    <td class="py-3 px-6">Opération</td>
+                    <td class="py-3 px-6 flex space-x-2">
+                        <button class="bg-green-200 text-green-800 px-2 py-1 rounded text-xs">✔️ Validé</button>
+                        <button class="bg-red-500 text-white px-2 py-1 rounded text-xs">❌ Annuler</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
