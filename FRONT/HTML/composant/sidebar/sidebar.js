@@ -1,3 +1,12 @@
+// document.addEventListener("DOMContentLoaded", function () {
+//     fetch("/FRONT/HTML/composant/navbar.html")
+//         .then(response => response.text())
+//         .then(data => {
+//             document.getElementById("mainContent").innerHTML = data;
+//         })
+//         .catch(error => console.error("Erreur lors du chargement du navbar :", error));
+// });
+
 const menuButton = document.getElementById('menuButton');
 const sidebar = document.getElementById('sidebar');
 const mainContent = document.getElementById('mainContent');
