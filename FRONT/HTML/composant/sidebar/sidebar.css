@@ -1,0 +1,45 @@
+    /* Barre latérale réduite */
+.hidden-sidebar {
+    width: 5% !important;
+}
+
+/* Contenu principal étendu */
+.content-full {
+    width: 95%;
+}
+
+/* Contenu principal avec sidebar */
+.content-with-sidebar {
+    width: 82%;
+}
+
+/* Cacher les textes de la sidebar */
+.hidden-sidebar .sidebar-text {
+    display: none;
+}
+
+/* Réduction de l'image */
+.hidden-sidebar .img1 {
+    width: 100%;
+    height: 15px;
+}
+
+
+
+.sidebar-item:hover .sidebar-text {
+    display: inline-block;
+    color: black;
+    z-index: 1000;
+    text-align: left; 
+    margin-left: 10px;
+ }
+
+/* Transition fluide */
+#sidebar,
+#mainContent {
+    transition: all 0.3s ease;
+}
+table{
+    z-index: 999;
+}
+
