@@ -14,16 +14,15 @@ canvas {
     max-height: 300px;
 }
 
-   
-   
-   /* Barre latérale réduite */
+ 
+ /* Barre latérale réduite */
 .hidden-sidebar {
     width: 5% !important;
 }
 
 /* Contenu principal étendu */
 .content-full {
-    width: 95%;
+    width: 92%;
 }
 
 /* Contenu principal avec sidebar */
@@ -49,7 +48,7 @@ canvas {
     color: black;
     z-index: 1000;
     text-align: left; 
-   
+    margin-left: 10px;
  }
 
 /* Transition fluide */

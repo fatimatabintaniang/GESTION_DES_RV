@@ -1,3 +1,25 @@
+// function includeHTML() {
+//     document.querySelectorAll("[data-include]").forEach(element => {
+//         let file = element.getAttribute("data-include");
+
+//         fetch(file)
+//             .then(response => {
+//                 if (!response.ok) {
+//                     throw new Error(`Erreur de chargement : ${file}`);
+//                 }
+//                 return response.text();
+//             })
+//             .then(data => {
+//                 element.innerHTML = data;
+//             })
+//             .catch(error => console.error(error));
+//     });
+// }
+
+// Appelle la fonction après le chargement de la page
+document.addEventListener("DOMContentLoaded", includeHTML);
+
+
 // document.addEventListener("DOMContentLoaded", function () {
 //     fetch("/FRONT/HTML/composant/navbar.html")
 //         .then(response => response.text())

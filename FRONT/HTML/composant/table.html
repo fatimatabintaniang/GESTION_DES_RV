@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinico - Liste des rendez-vous</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body class="bg-white p-6">
+    <div class="max-w-5xl mx-auto p-6 bg-[#F8F8FF] rounded-lg shadow-lg">
+        <!-- Barre d'actions -->
+        <div class="flex justify-between items-center bg-gray-50 p-4 rounded-lg shadow-sm border border-gray-200">
+            <div>
+                <h2 class="text-2xl font-bold text-gray-800">Clinico <span class="bg-[#F8F8FF] text-sm text-blue-500 px-2 py-1 rounded-lg">Simple et direct</span></h2>
+                <p class="text-gray-500">Liste des rendez-vous</p>
+            </div>
+            <div class="flex space-x-3">
+                <button class=" text-gray-700 px-4 py-2 rounded-lg text-sm flex items-center hover:bg-red-600">
+                    <i class="ri-delete-bin-6-line mr-2 text-red-500"></i> Annuler
+                </button>
+                <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm flex items-center hover:bg-gray-300">
+                    <i class="ri-filter-3-line mr-2"></i> Filtres
+                </button>
+                <button class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm flex items-center hover:bg-blue-700">
+                    <i class="ri-add-line mr-2  "></i> Ajouter RV
+                </button>
+            </div>
+        </div>
+
+        <!-- Tableau -->
+        <div class="overflow-x-auto  border rounded-lg shadow-sm">
+            <table class="min-w-full border-collapse">
+                <thead>
+                    <tr class="bg-white text-gray-700 uppercase text-sm">
+                        <th class="py-3 px-6 text-left w-12">
+                            <input type="checkbox" class="w-5 h-5 accent-blue-500">
+                        </th>
+                        <th class="py-3 px-6 text-left">Date ⬍</th>
+                        <th class="py-3 px-6 text-left">Patient ⬍</th>
+                        <th class="py-3 px-6 text-left">Médecin ⬍</th>
+                        <th class="py-3 px-6 text-left">Motif ⬍</th>
+                        <th class="py-3 px-6 text-left">Action</th>
+                    </tr>
+                </thead>
+                <tbody class="text-gray-600 text-sm bg-white">
+                    <!-- Ligne de données -->
+                    <tr class="border-b border-gray-200 hover:bg-gray-50">
+                        <td class="py-3 px-6"><input type="checkbox" class="w-5 h-5 accent-blue-500"></td>
+                        <td class="py-3 px-6">09/03/2025 à 15h28</td>
+                        <td class="py-3 px-6">Babacar Traoré</td>
+                        <td class="py-3 px-6">Fatima Niang</td>
+                        <td class="py-3 px-6">Consultation générale</td>
+                        <td class="py-3 px-6 flex space-x-3">
+                            <button class="bg-green-100 text-green-800 px-3 py-1 rounded-lg text-sm flex items-center space-x-1 hover:bg-green-200">
+                                <span class="text-green-800 text-lg font-bold">•</span>
+                                <span class="text-green-900 font-semibold">Validé</span>
+                            </button>
+                            <button class="bg-red-100 text-red-800 px-3 py-1 rounded-lg text-sm flex items-center space-x-1 hover:bg-red-200">
+                                <span class="text-red-800 text-lg font-bold">•</span>
+                                <span class="text-red-900 font-semibold">Annuler</span>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr class="border-b border-gray-200 hover:bg-gray-50">
+                        <td class="py-3 px-6"><input type="checkbox" class="w-5 h-5 accent-blue-500"></td>
+                        <td class="py-3 px-6">09/23/2025 à 15h28</td>
+                        <td class="py-3 px-6">Babacar Traoré</td>
+                        <td class="py-3 px-6">Fatima Niang</td>
+                        <td class="py-3 px-6">Consultation générale</td>
+                        <td class="py-3 px-6 flex space-x-3">
+                            <button class="bg-green-100 text-green-800 px-3 py-1 rounded-lg text-sm flex items-center space-x-1 hover:bg-green-200">
+                                <span class="text-green-800 text-lg font-bold">•</span>
+                                <span class="text-green-900 font-semibold">Validé</span>
+                            </button>
+                            <button class="bg-red-100 text-red-800 px-3 py-1 rounded-lg text-sm flex items-center space-x-1 hover:bg-red-200">
+                                <span class="text-red-800 text-lg font-bold">•</span>
+                                <span class="text-red-900 font-semibold">Annuler</span>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
