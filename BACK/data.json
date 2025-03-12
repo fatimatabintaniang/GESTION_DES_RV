@@ -36,28 +36,8 @@
       "login": "mari@gmail.com",
       "password": "5678",
       "telephone": "766",
-      "adress": "Thiaroye",
+      "adress": "Thiaroyeee",
       "id": "3"
-    },
-    {
-      "id": "4",
-      "prenom": "Daouda",
-      "nom": "sy",
-      "genre": "Homme",
-      "login": "jjkk@gmail.com",
-      "password": "1200",
-      "telephone": "330",
-      "adress": "Kaffrine"
-    },
-    {
-      "prenom": "Daouda",
-      "nom": "sy",
-      "genre": "Homme",
-      "login": "76@gmail.com",
-      "password": "120P",
-      "telephone": "3300",
-      "adress": "Kaffrine",
-      "id": "5"
     }
   ],
   "medecin": [
@@ -117,7 +97,9 @@
       "id_patient": "1",
       "date": "22/02/2024",
       "heure": "22:10",
-      "statut": "VALIDER"
+      "specialite": "Dentiste",
+      "motif":"Consultation générale",
+      "statut": "Annuler"
     },
     {
       "id": "3",
@@ -125,6 +107,8 @@
       "id_patient": "3",
       "date": "23/02/2024",
       "heure": "10:00",
+      "specialite": "Ophtalmo",
+      "motif":"Consultation générale",
       "statut": "VALIDER"
     },
     {
@@ -133,6 +117,8 @@
       "id_patient": "1",
       "date": "23/02/2024",
       "heure": "11:30",
+      "specialite": "Generaliste",
+      "motif":"Consultation générale",
       "statut": "VALIDER"
     }
   ],
