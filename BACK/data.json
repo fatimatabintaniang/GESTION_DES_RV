@@ -35,9 +35,29 @@
       "genre": "Femme",
       "login": "mari@gmail.com",
       "password": "5678",
-      "telephone": "76",
+      "telephone": "766",
       "adress": "Thiaroye",
       "id": "3"
+    },
+    {
+      "id": "4",
+      "prenom": "Daouda",
+      "nom": "sy",
+      "genre": "Homme",
+      "login": "jjkk@gmail.com",
+      "password": "1200",
+      "telephone": "330",
+      "adress": "Kaffrine"
+    },
+    {
+      "prenom": "Daouda",
+      "nom": "sy",
+      "genre": "Homme",
+      "login": "76@gmail.com",
+      "password": "120P",
+      "telephone": "3300",
+      "adress": "Kaffrine",
+      "id": "5"
     }
   ],
   "medecin": [
@@ -110,39 +130,10 @@
     {
       "id": "4",
       "id_medecin": "1",
-      "id_patient": "4",
+      "id_patient": "1",
       "date": "23/02/2024",
       "heure": "11:30",
       "statut": "VALIDER"
-    },
-    {
-      "id": "5",
-      "id_medecin": "3",
-      "id_patient": "4",
-      "date": "24/02/2024",
-      "heure": "09:00",
-      "statut": "En cours"
-    },
-    {
-      "id": "6",
-      "id_medecin": "2",
-      "id_patient": "4",
-      "date": "24/02/2024",
-      "heure": "14:00",
-      "statut": "REFUSER"
-    },
-    {
-      "id": "7",
-      "id_patient": "2",
-      "id_medecin": "3",
-      "date": "2025-03-20T01:39"
-    },
-    {
-      "id": "8",
-      "id_patient": "36c9",
-      "id_medecin": "4",
-      "date": "2025-03-09T10:40",
-      "statut": "en_cours"
     }
   ],
   "role": [
