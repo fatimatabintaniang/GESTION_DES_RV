@@ -29,7 +29,28 @@ document.addEventListener("DOMContentLoaded", async function () {
         try {
             const response = await fetch("http://localhost:3000/patient");
             const patients = await response.json();
+
+            const rvResponse = await fetch("http://localhost:3000/rv");
+            const rvs = await rvResponse.json();
+
+
+            // Initialiser patientRvCount avec 0 pour chaque patient
+            const patientRvCount = {};
+            patients.forEach(patient => {
+                patientRvCount[patient.id] = 0; // Par défaut, 0 RV
+            });
+
+            // Compter le nombre de RV pour chaque patient
+            rvs.forEach(rv => {
+                if (patientRvCount[rv.id_patient]) {
+                    patientRvCount[rv.id_patient]++;
+                } else {
+                    patientRvCount[rv.id_patient] = 1;
+                }
+            });
+
             container.innerHTML = ""; // Vider le tableau
+
 
             patients.forEach(patient => {
                 const row = document.createElement("tr");
@@ -42,7 +63,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                     <td class="py-3 px-6">${patient.login}</td>
                     <td class="py-3 px-6">${patient.adress}</td>
                     <td class="py-3 px-6">${patient.telephone}</td>
-                    <td class="py-3 px-6 text-center">${patient.nombreRv || 0}</td>
+                    <td class="py-3 px-6 text-center">${patientRvCount[patient.id] || 0}</td>
                            <td class="py-3 px-6">
                     <button class="px-4 py-2  text-blue-800 rounded-lg hover:bg-blue-500 transition-all edit-btn" data-id="${patient.id}">
                         <i class="ri-edit-line mr-2"></i>
@@ -52,10 +73,10 @@ document.addEventListener("DOMContentLoaded", async function () {
                 container.appendChild(row);
             });
             // Ajout d'un événement pour chaque bouton d'édition
-            
-        // Ajouter des écouteurs d'événements pour les boutons "Edit"
-        document.querySelectorAll(".edit-btn").forEach(button => {
-            button.addEventListener("click", () => openEditModal(button.getAttribute("data-id")));
+
+            // Ajouter des écouteurs d'événements pour les boutons "Edit"
+            document.querySelectorAll(".edit-btn").forEach(button => {
+                button.addEventListener("click", () => openEditModal(button.getAttribute("data-id")));
             });
         } catch (error) {
             console.error("Erreur lors de la récupération des patients :", error);
@@ -94,6 +115,29 @@ document.addEventListener("DOMContentLoaded", async function () {
         let phone = document.getElementById("phone").value.trim();
         let adress = document.getElementById("adress").value.trim();
 
+        // Vérifier si l'email, le mot de passe ou le téléphone existent déjà
+        const patientsResponse = await fetch("http://localhost:3000/patient");
+        const patients = await patientsResponse.json();
+
+        const isEmailUnique = !patients.some(patient => patient.login === email);
+        const isPasswordUnique = !patients.some(patient => patient.password === password);
+        const isPhoneUnique = !patients.some(patient => patient.telephone === phone);
+
+        if (!isEmailUnique) {
+            alert("Cet email est déjà utilisé par un autre patient.");
+            return;
+        }
+
+        if (!isPasswordUnique) {
+            alert("Ce mot de passe est déjà utilisé par un autre patient.");
+            return;
+        }
+
+        if (!isPhoneUnique) {
+            alert("Ce numéro de téléphone est déjà utilisé par un autre patient.");
+            return;
+        }
+
         // Vérification des champs vides
         let isValid = true;
         if (!prenom) {
@@ -113,7 +157,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         if (!email) {
             document.getElementById("EmailError").classList.remove("hidden");
             isValid = false;
-        }else if( !email.includes("@") || !email.includes(".") || email.indexOf(" ") >= 0){
+        } else if (!email.includes("@") || !email.includes(".") || email.indexOf(" ") >= 0) {
             document.getElementById("EmailError").classList.add("hidden");
             document.getElementById("ConfirmEmail").classList.remove("hidden");
             isValid = false;
@@ -123,7 +167,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
 
 
-    
+
 
         if (!password) {
             document.getElementById("PasswordError").classList.remove("hidden");
@@ -257,11 +301,11 @@ document.addEventListener("DOMContentLoaded", async function () {
             // Récupérer les informations du patient
             const response = await fetch(`http://localhost:3000/patient/${patientId}`);
             const patient = await response.json();
-    
+
             if (!patient) {
                 throw new Error("Patient non trouvé");
             }
-    
+
             // Remplir le formulaire de modification
             document.getElementById("editPrenom").value = patient.prenom;
             document.getElementById("editNom").value = patient.nom;
@@ -270,7 +314,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             document.getElementById("editPassword").value = patient.password;
             document.getElementById("editPhone").value = patient.telephone;
             document.getElementById("editAdress").value = patient.adress;
-    
+
             // Afficher le modal de modification
             document.getElementById("editModal").classList.remove("hidden");
             document.getElementById("editModal").setAttribute("data-id", patientId); // Stocker l'ID du patient
@@ -281,10 +325,10 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     document.getElementById("editPatientForm").addEventListener("submit", async function (e) {
         e.preventDefault();
-    
+
         // Récupérer l'ID du patient
         const patientId = document.getElementById("editModal").getAttribute("data-id");
-    
+
         // Récupérer les valeurs du formulaire
         const updatedPatient = {
             prenom: document.getElementById("editPrenom").value,
@@ -295,7 +339,31 @@ document.addEventListener("DOMContentLoaded", async function () {
             telephone: document.getElementById("editPhone").value,
             adress: document.getElementById("editAdress").value,
         };
-    
+
+        // Vérifier si l'email, le mot de passe ou le téléphone existent déjà (sauf pour le patient actuel)
+        const patientsResponse = await fetch("http://localhost:3000/patient");
+        const patients = await patientsResponse.json();
+
+        const isEmailUnique = !patients.some(patient => patient.login === updatedPatient.login && patient.id !== patientId);
+        const isPasswordUnique = !patients.some(patient => patient.password === updatedPatient.password && patient.id !== patientId);
+        const isPhoneUnique = !patients.some(patient => patient.telephone === updatedPatient.telephone && patient.id !== patientId);
+
+        if (!isEmailUnique) {
+            alert("Cet email est déjà utilisé par un autre patient.");
+            return;
+        }
+
+        if (!isPasswordUnique) {
+            alert("Ce mot de passe est déjà utilisé par un autre patient.");
+            return;
+        }
+
+        if (!isPhoneUnique) {
+            alert("Ce numéro de téléphone est déjà utilisé par un autre patient.");
+            return;
+        }
+
+
         try {
             // Envoyer une requête PUT pour mettre à jour le patient
             const response = await fetch(`http://localhost:3000/patient/${patientId}`, {
@@ -305,11 +373,11 @@ document.addEventListener("DOMContentLoaded", async function () {
                 },
                 body: JSON.stringify(updatedPatient),
             });
-    
+
             if (!response.ok) {
                 throw new Error("Erreur lors de la mise à jour du patient");
             }
-    
+
             // Fermer le modal et rafraîchir la liste des patients
             document.getElementById("editModal").classList.add("hidden");
             fetchPatients();
