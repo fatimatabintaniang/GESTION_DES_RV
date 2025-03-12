@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
             patients.forEach(patient => {
                 const row = document.createElement("tr");
-                row.classList.add("border-b", "border-gray-200", "hover:bg-blue-100");
+                row.classList.add("border-b", "border-gray-200", "hover:bg-gray-100");
                 row.innerHTML = `
                     <td class="py-3 px-6"><input type="checkbox" class="w-5 h-5 accent-blue-500 patient-checkbox" data-id="${patient.id}"></td>
                     <td class="py-3 px-6">${patient.prenom}</td>
@@ -110,12 +110,20 @@ document.addEventListener("DOMContentLoaded", async function () {
             document.getElementById("NomError").classList.add("hidden");
         }
 
-        if (!email || !email.includes("@")) {
+        if (!email) {
             document.getElementById("EmailError").classList.remove("hidden");
             isValid = false;
+        }else if( !email.includes("@") || !email.includes(".") || email.indexOf(" ") >= 0){
+            document.getElementById("EmailError").classList.add("hidden");
+            document.getElementById("ConfirmEmail").classList.remove("hidden");
+            isValid = false;
+
         } else {
             document.getElementById("EmailError").classList.add("hidden");
         }
+
+
+    
 
         if (!password) {
             document.getElementById("PasswordError").classList.remove("hidden");
