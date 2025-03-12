@@ -48,7 +48,6 @@ canvas {
     color: black;
     z-index: 1000;
     text-align: left; 
-    margin-left: 10px;
  }
 
 /* Transition fluide */
