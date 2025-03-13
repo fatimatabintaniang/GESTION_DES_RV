@@ -47,7 +47,6 @@ async function getNombreRV(mois, annee) {
         }
         
         const rendezvous = await response.json();
-        console.log(rendezvous);
         
         
         // Filtrer les rendez-vous du mois et de l'année demandés
