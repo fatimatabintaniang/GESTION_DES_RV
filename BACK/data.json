@@ -29,48 +29,6 @@
       "prenom": "mariama",
       "login": "mariama@gmail.com",
       "password": "5678"
-    },
-    {
-      "id": "4",
-      "nom": "sow",
-      "prenom": "ibrahima",
-      "login": "ibrahima@gmail.com",
-      "password": "9999"
-    },
-    {
-      "id": "5",
-      "nom": "Biteye",
-      "prenom": "Amadou",
-      "login": "amadou@gmail.com",
-      "password": "6666"
-    },
-    {
-      "id": "6",
-      "nom": "Ba",
-      "prenom": "Modou",
-      "login": "modou@gmail.com",
-      "password": "2233"
-    },
-    {
-      "id": "7",
-      "nom": "thioukh",
-      "prenom": "thioukh",
-      "login": "thioukh@gmail.com",
-      "password": "thioukh"
-    },
-    {
-      "id": "8",
-      "nom": "simplon",
-      "prenom": "ROKHAYA",
-      "login": "rokhayatoure2000@gmail.com",
-      "password": "rokhayatoure2000"
-    },
-    {
-      "id": "9",
-      "nom": "Biteye",
-      "prenom": "Mamadou",
-      "login": "mamad@gmail.com",
-      "password": "1151"
     }
   ],
   "medecin": [
