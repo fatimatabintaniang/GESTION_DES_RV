@@ -47,6 +47,7 @@
       "prenom": "moustapha",
       "specialite": "generaliste",
       "login": "moutapha@gmail.com",
+      "adresse": "liberté 06",
       "password": "4444"
     },
     {
@@ -55,6 +56,7 @@
       "prenom": "demba",
       "specialite": "dentiste",
       "login": "demba@gmail.com",
+      "adresse": "liberté 05",
       "password": "2222"
     },
     {
@@ -63,6 +65,7 @@
       "prenom": "khadija",
       "specialite": "cardiologue",
       "login": "khadija@gmail.com",
+      "adresse": "liberté 04",
       "password": "3333"
     },
     {
@@ -71,6 +74,7 @@
       "prenom": "serigne",
       "specialite": "dermatologue",
       "login": "serigne@gmail.com",
+      "adresse": "liberté 03",
       "password": "5555"
     },
     {
@@ -79,6 +83,7 @@
       "prenom": "Barakatou",
       "specialite": "chirurgie",
       "login": "brakatou@gmail.com",
+      "adresse": "liberté 02",
       "password": "8899"
     },
     {
@@ -87,7 +92,16 @@
       "prenom": "Djimba",
       "specialite": "praticien",
       "login": "djimba@gmail.com",
+      "adresse": "liberté 01",
       "password": "5566"
+    },
+    {
+      "id": "91b1",
+      "nom": "Cissé",
+      "prenom": "bb",
+      "specialite": "ophtalmo",
+      "login": "cisse@gmail.com",
+      "password": "8884"
     }
   ],
   "rv": [
