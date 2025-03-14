@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="p-6 bg-gray-50 min-h-screen">
+    <div class="grid grid-cols-4 gap-4 mb-6 w-4/5">
+        <div class="p-4 bg-white shadow-lg rounded-lg flex justify-between">
+            <div>
+                <p class="text-gray-500 font-medium">Medcin</p>
+                <h2 class="text-2xl font-bold" id="nombreMedecins"></h2>
+            </div>
+            <div class="flex items-center">
+                <p class="text-green-500 text-base font-semibold">+12.5%</p>
+            </div>
+        </div>
+        <div class="p-4 bg-white shadow-lg rounded-lg flex justify-between">
+            <div>
+                <p class="text-gray-500 font-medium">Patient</p>
+                <h2 class="text-2xl font-bold" id="nombrePatients">726</h2>
+            </div>
+            <div class="flex items-center">
+                <p class="text-green-500 text-base font-semibold">+12.5%</p>
+            </div>
+        </div>
+        <div class="p-4 bg-white shadow-lg rounded-lg flex justify-between">
+            <div>
+                <p class="text-gray-500 font-medium">rendez-vous</p>
+                <h2 class="text-2xl font-bold">726</h2>
+            </div>
+            <div class="flex items-center">
+                <p class="text-green-500 text-base font-semibold">+12.5%</p>
+            </div>
+        </div>
+    </div>
+    <div class="flex justify-between bg-white px-6 rounded-lg">
+        <!-- Ajouter cette balise dans la section Total RV (remplacez la partie flex des années) -->
+        <div class="mt-12 w-1/2">
+            <canvas id="myLineChart"></canvas>
+        </div>
+
+
+        <div class="p-4  ">
+            <h3 class="text-lg font-bold mb-4">Traffic by Location</h3>
+            <canvas id="myDonutChart" class=""></canvas>
+
+        </div>
+        <div></div>
+    </div>
+
+  
+<!-- Ajouter le CDN de Chart.js avant la fermeture de body -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+
+
+
+<script>
+    const ctxs = document.getElementById('myDonutChart').getContext('2d');
+
+    new Chart(ctxs, {
+        type: 'doughnut', // Type donut
+        data: {
+            labels: ['Validé', 'Annullé'],
+            datasets: [{
+                label: 'Répartition du trafic',
+                data: [40, 25], // Pourcentage par catégorie
+                backgroundColor: ['#FF6384', '#36A2EB'], // Couleurs des segments
+                hoverOffset: 10 // Effet au survol
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'bottom' // Place la légende en bas
+                }
+            }
+        }
+    });
+</script>
+<script src="../../JS/secretaire/nbreMedcin.js"></script>
+
+
+</body>
+</html>

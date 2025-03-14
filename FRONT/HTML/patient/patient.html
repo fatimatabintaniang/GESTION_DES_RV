@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinico - Liste des rendez-vous</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../composant/sidebar/sidebar.css">
+</head>
+
+<body class="">
+    <div class="w-full grid grid-cols-1 gap-10">
+
+
+        <div class="bg-white p-3 shadow-sm   items-center">
+            <div class="flex h-9 gap-5 items-center justify-between">
+                <ul>
+                    <li class="font-bold text-2xl text-blue-500"><a href="#">Clinico Dashboard</a></li>
+                </ul>
+
+                <div class="flex gap-3  sidebar-item items-center">
+                    <a href="#"><img src="../../HTML/composant/image/profil.png"
+                            class="w-[40px] h-[40px] img2 rounded-full profil" alt=""></a>
+                    <div class="sidebar-text grid grid-cols-1">
+                        <span class="text-md">Michael Smith</span>
+                        <span class="text-sm">michel12@gmail.com</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class=" mx-auto p-6 bg-[#f8f8ff] w-[80%] rounded-lg  h-[80vh] ">
+            <!-- Barre d'actions -->
+            <div class="flex justify-between items-center bg-gray-50 p-4 rounded-lg shadow-sm border border-gray-200">
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-800">Clinico <span
+                            class="bg-[#F8F8FF] text-sm text-blue-500 px-2 py-1 rounded-lg">Simple et
+                            direct</span>
+                    </h2>
+                    <p class="text-gray-500">Liste des rendez-vous</p>
+                </div>
+                <button class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm flex items-center hover:bg-blue-700"
+                    id="myBtn">
+                    <i class="ri-add-line mr-2  "></i> Demande RV
+                </button>
+            </div>
+
+            <!-- Tableau -->
+            <div class="overflow-x-auto  border rounded-lg shadow-sm ">
+                <table class="min-w-full border-collapse ">
+                    <thead>
+                        <tr class="bg-white text-gray-700 uppercase text-sm">
+                            <th class=" text-center w-12"></th>
+                            <th class=" text-center">Date ⬍</th>
+                            <th class=" text-center">Heure ⬍</th>
+                            <th class=" text-center">Specialiste ⬍</th>
+                            <th class=" text-center">Motif ⬍</th>
+                            <th class=" text-center">Action ⬍</th>
+                        </tr>
+                    </thead>
+                    <tbody id="Container" class="bg-white text-center divide-y divide-gray-200 ">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+
+
+<script src="../../JS/patient/patient.js"></script>
+</body>
+
+</html>
