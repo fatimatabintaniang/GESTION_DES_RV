@@ -1,3 +1,17 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const sidebarElement = document.getElementById("sidebar");
+
+    if (sidebarElement) {
+        fetch('../composant/sidebar/sidebar.html')
+            .then(response => response.text())
+            .then(data => {
+                sidebarElement.innerHTML = data;
+            })
+            .catch(error => {
+                console.error("Erreur lors du chargement de la barre latérale:", error);
+            });
+    }
+});
 
 
 
