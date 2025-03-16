@@ -93,21 +93,12 @@
       "password": "2222"
     },
     {
-      "id": "3",
-      "nom": "ba",
-      "prenom": "khadija",
-      "specialite": "cardiologue",
-      "login": "khadija@gmail.com",
-      "adresse": "liberté 04",
-      "password": "3333"
-    },
-    {
       "id": "4",
       "nom": "ndiaye",
       "prenom": "serigne",
       "specialite": "dermatologue",
       "login": "serigne@gmail.com",
-      "adresse": "liberté 03",
+      "adresse": "liberté 4",
       "password": "5555"
     },
     {

@@ -7,9 +7,15 @@ document.addEventListener("DOMContentLoaded", async () => {
      const add_medecin=document.querySelector("#add_medecin");
      const annuler=document.querySelector("#annuler");
      const contenu=document.querySelector("#contenu");
-     const form=document.getElementById("medecinForm")
-     const popup=document.getElementById("popup")
-     
+     const form=document.getElementById("medecinForm");
+     const popup=document.getElementById("popup");
+
+     const menuButton=document.querySelector("#menuButton");
+     const cont=document.querySelector("#cont");
+     menuButton.addEventListener("click",() => {
+      cont.classList.toggle("grid-cols-[18%_auto]")
+      cont.classList.toggle("grid-cols-[5%_auto]")
+     })
         //pupup
      add_medecin.addEventListener("click",() => {
         popup.classList.remove("hidden");
@@ -154,27 +160,18 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       });
 
-               // Les événements de modification
-               const button=document.querySelectorAll(".modifier")
-               button.forEach(btn => {
-                btn.addEventListener("click",function(){
-                  modifierMedecin(event);
-                  const contenu=document.querySelector("#contenu");
-                  contenu.classList.remove("bg-black opacity-75");              
-                }); 
-      });
+      document.querySelectorAll(".modifier").forEach(btn => {
+        btn.addEventListener("click", function(event) {
+          console.log(event.currentTarget.dataset);
+            const id = event.currentTarget.dataset.id; 
+            console.log(id);
+            const med = medecin.find(m => m.id == id); 
+            modifierMedecin(med);
+        });
+    });
+
   }
   
-   // Sélectionner tous les médecins
-//    document.getElementById("select-all").addEventListener("change", function() {
-//     document.querySelectorAll(".checkbox-medecin").forEach(cb => cb.checked = this.checked);
-// });
-
-// Fonction de suppression
-// document.getElementById("supprimer").addEventListener("click", function() {
-//     medecins = medecins.filter((_, index) => !document.querySelector(`.checkbox-medecin[data-index="${index}"]`).checked);
-//     listeMedcin(medecin);
-// });
 
 document.getElementById("supprimer").addEventListener("click", async function () {
   // alert("yoo");
@@ -183,7 +180,8 @@ document.getElementById("supprimer").addEventListener("click", async function ()
   const checksup = Array.from(checkboxes).map(cb => cb.dataset.id);
 
   if (checksup.length === 0) {
-      alert("Aucun médecin sélectionné !");
+    const msge=document.getElementById("msge");
+      msge.textContent="Aucun médecin sélectionné !";
       return;
   }
 
@@ -204,9 +202,11 @@ document.getElementById("supprimer").addEventListener("click", async function ()
 
 
 // Fonction de modification
-async function modifierMedecin(event) {
-  const id = event.target.dataset.id;
-  const med = await fetcher("medecin");
+async function modifierMedecin(med) {
+  console.log(med);
+  
+  const id = med.id;
+  
 
   document.getElementById("id-modif").value = id;
   document.getElementById("prenom-modif").value = med.prenom;
