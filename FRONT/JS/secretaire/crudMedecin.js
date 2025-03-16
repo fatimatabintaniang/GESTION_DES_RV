@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", async () => {
 
     const user=JSON.parse(localStorage.getItem("user"))
-     medecin = await fetcher("medecin");
+    const medecin = await fetcher("medecin");
      
      listeMedcin(medecin); 
      const add_medecin=document.querySelector("#add_medecin");
@@ -139,61 +139,105 @@ document.addEventListener("DOMContentLoaded", async () => {
         const row = document.createElement("tr");
         row.className = "border-b border-gray-200 hover:bg-gray-50";
         row.innerHTML = `
-          <td class="py-3 px-6"><input type="checkbox" class="w-5 h-5 accent-blue-500"></td>
+          <td class="py-3 px-6"><input type="checkbox" class="checkbox-medecin  w-5 h-5 accent-blue-500" data-id="${med.id}"></td>
           <td class="px-6 py-3">${med.prenom} ${med.nom}</td>
           <td class="px-6 py-3">${med.specialite}</td>
           <td class="px-6 py-3">${med.login}</td>
           <td class="px-6 py-3">${med.adresse}</td>
           <td class="py-3 px-6 flex space-x-3">
-            <button class=" modifier bg-[#F2F4F7] text-[#0070FF] font-medium px-3 py-1 rounded-lg text-sm flex items-center space-x-1 hover:bg-green-200" data-id="${med.id}>
+            <button class=" modifier bg-[#F2F4F7] text-[#0070FF] font-medium px-3 py-1 rounded-lg text-sm flex items-center space-x-1 hover:bg-green-200" data-id="${med.id}">
                 <span class=" text-lg font-bold">•</span>
                 <span class="">Modifier</span>
             </button>
          </td>`;
         listeMedcin.appendChild(row);
 
-         // Les événements de modification
-         document.querySelectorAll(".modifier").forEach(btn => {
-          btn.addEventListener("click", modifierMedecin);
       });
-    });
+
+               // Les événements de modification
+               const button=document.querySelectorAll(".modifier")
+               button.forEach(btn => {
+                btn.addEventListener("click",function(){
+                  modifierMedecin(event);
+                  const contenu=document.querySelector("#contenu");
+                  contenu.classList.remove("bg-black opacity-75");              
+                }); 
+      });
   }
   
    // Sélectionner tous les médecins
-   document.getElementById("select-all").addEventListener("change", function() {
-    document.querySelectorAll(".checkbox-medecin").forEach(cb => cb.checked = this.checked);
-});
+//    document.getElementById("select-all").addEventListener("change", function() {
+//     document.querySelectorAll(".checkbox-medecin").forEach(cb => cb.checked = this.checked);
+// });
 
 // Fonction de suppression
-document.getElementById("supprimer").addEventListener("click", function() {
-    medecins = medecins.filter((_, index) => !document.querySelector(`.checkbox-medecin[data-index="${index}"]`).checked);
-    listeMedcin(medecins);
+// document.getElementById("supprimer").addEventListener("click", function() {
+//     medecins = medecins.filter((_, index) => !document.querySelector(`.checkbox-medecin[data-index="${index}"]`).checked);
+//     listeMedcin(medecin);
+// });
+
+document.getElementById("supprimer").addEventListener("click", async function () {
+  // alert("yoo");
+  // Récupérer tous les médecins cochés
+  const checkboxes = document.querySelectorAll(".checkbox-medecin:checked");
+  const checksup = Array.from(checkboxes).map(cb => cb.dataset.id);
+
+  if (checksup.length === 0) {
+      alert("Aucun médecin sélectionné !");
+      return;
+  }
+
+  // Supprimer chaque médecin avec `DELETE`
+  try {
+      await Promise.all(checksup.map(id =>
+          fetch(`http://localhost:3000/medecin/${id}`, {
+              method: "DELETE"
+          })
+      ));
+
+      // Recharger la liste après suppression
+      chargerMedecins();
+  } catch (error) {
+      console.error("Erreur lors de la suppression", error);
+  }
 });
 
-// Fonction de modification
-function modifierMedecin(event) {
-  const index = event.target.dataset.index;
-  const med = medecins[index];
 
-  document.getElementById("index-modif").value = med.id;
+// Fonction de modification
+async function modifierMedecin(event) {
+  const id = event.target.dataset.id;
+  const med = await fetcher("medecin");
+
+  document.getElementById("id-modif").value = id;
   document.getElementById("prenom-modif").value = med.prenom;
   document.getElementById("nom-modif").value = med.nom;
   document.getElementById("specialite-modif").value = med.specialite;
   document.getElementById("login-modif").value = med.login;
+  document.getElementById("pass-modif").value = med.password;
   document.getElementById("adresse-modif").value = med.adresse;
   document.getElementById("form-modif").classList.remove("hidden");
 }
 
 // Valider la modification
-document.getElementById("valider-modif").addEventListener("click", function() {
-  const index = document.getElementById("index-modif").value;
-  medecins[index] = {
+document.getElementById("valider-modif").addEventListener("click", async function() {
+  const id = document.getElementById("id-modif").value;
+ const medecinModif= {
       prenom: document.getElementById("prenom-modif").value,
       nom: document.getElementById("nom-modif").value,
       specialite: document.getElementById("specialite-modif").value,
       login: document.getElementById("login-modif").value,
       adresse: document.getElementById("adresse-modif").value
   };
-  document.getElementById("form-modif").classList.add("hidden");
-  listeMedcin(medecins);
+  try {
+    await fetch(`http://localhost:3000/medecin/${id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(medecinModif)
+    });
+
+    document.getElementById("form-modif").classList.add("hidden");
+    listeMedcin(medecin);
+  } catch (error) {
+    console.error("Erreur lors de la mise à jour", error);
+}
 });

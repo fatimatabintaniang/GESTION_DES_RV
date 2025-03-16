@@ -118,23 +118,6 @@
       "login": "brakatou@gmail.com",
       "adresse": "liberté 02",
       "password": "8899"
-    },
-    {
-      "id": "6",
-      "nom": "Ka ",
-      "prenom": "Djimba",
-      "specialite": "praticien",
-      "login": "djimba@gmail.com",
-      "adresse": "liberté 01",
-      "password": "5566"
-    },
-    {
-      "id": "91b1",
-      "nom": "Cissé",
-      "prenom": "bb",
-      "specialite": "ophtalmo",
-      "login": "cisse@gmail.com",
-      "password": "8884"
     }
   ],
   "rv": [
