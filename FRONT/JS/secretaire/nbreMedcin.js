@@ -1,3 +1,4 @@
+
 async function getNombreMedecins() {
     try {
         const response = await fetch('http://localhost:3000/medecin'); // Appel à l'API JSON Server

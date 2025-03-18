@@ -1,3 +1,4 @@
+e943efa2c373683e2fd8e76c4170fb6de874291a
 async function getNombreMedecins() {
     try {
         const response = await fetch('http://localhost:3000/medecins'); // Appel à l'API JSON Server

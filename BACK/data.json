@@ -14,63 +14,37 @@
       "nom": "niass",
       "prenom": "abdou",
       "login": "abdou@gmail.com",
-      "password": "1111"
+      "password": "1111",
+      "telephone": "714",
+      "adress": "Zac Mbao"
     },
     {
       "id": "2",
       "nom": "diouf",
       "prenom": "amina",
       "login": "amina@gmail.com",
-      "password": "3456"
+      "password": "3456",
+      "telephone": "713",
+      "adress": "Zac Mbao"
     },
     {
       "id": "3",
       "nom": "fall",
       "prenom": "mariama",
       "login": "mariama@gmail.com",
-      "password": "5678"
+      "password": "5678",
+      "telephone": "712",
+      "adress": "Zac Mbao"
     },
     {
-      "id": "4",
-      "nom": "sow",
-      "prenom": "ibrahima",
-      "login": "ibrahima@gmail.com",
-      "password": "9999"
-    },
-    {
-      "id": "5",
-      "nom": "Biteye",
-      "prenom": "Amadou",
-      "login": "amadou@gmail.com",
-      "password": "6666"
-    },
-    {
-      "id": "6",
-      "nom": "Ba",
-      "prenom": "Modou",
-      "login": "modou@gmail.com",
-      "password": "2233"
-    },
-    {
-      "id": "7",
-      "nom": "thioukh",
-      "prenom": "thioukh",
-      "login": "thioukh@gmail.com",
-      "password": "thioukh"
-    },
-    {
-      "id": "8",
-      "nom": "simplon",
-      "prenom": "ROKHAYA",
-      "login": "rokhayatoure2000@gmail.com",
-      "password": "rokhayatoure2000"
-    },
-    {
-      "id": "9",
-      "nom": "Biteye",
-      "prenom": "Mamadou",
-      "login": "mamad@gmail.com",
-      "password": "1151"
+      "prenom": "tswyyw",
+      "nom": "Diop",
+      "genre": "Femme",
+      "login": "jjkk@gmail.com",
+      "password": "vvvv",
+      "telephone": "718",
+      "adress": "Dakar",
+      "id": "4"
     }
   ],
   "medecin": [
@@ -162,7 +136,7 @@
     {
       "id": "6",
       "id_medecin": "2",
-      "id_patient": "4",
+      "id_patient": "1",
       "date": "24/02/2024",
       "heure": "14:00",
       "statut": "VALIDER"
@@ -172,13 +146,6 @@
       "id_patient": "2",
       "id_medecin": "3",
       "date": "2025-03-20T01:39",
-      "statut": "VALIDER"
-    },
-    {
-      "id": "8",
-      "id_patient": "36c9",
-      "id_medecin": "4",
-      "date": "2025-03-09T10:40",
       "statut": "VALIDER"
     }
   ],

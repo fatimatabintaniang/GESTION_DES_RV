@@ -35,15 +35,10 @@ canvas {
     display: none;
 }
 
-/* Réduction de l'image */
-.hidden-sidebar .img1 {
-    width: 80%;
-    height: 20px;
+.hidden-sidebar .ms{
+    display: none;
 }
 
-.hidden-sidebar .i1 {
-   display: none;
-}
 
 
 
@@ -53,6 +48,8 @@ canvas {
     z-index: 1000;
     text-align: left; 
  }
+
+ 
 
 /* Transition fluide */
 #sidebar,
