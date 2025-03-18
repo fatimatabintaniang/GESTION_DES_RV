@@ -182,6 +182,54 @@
     {
       "id": "1",
       "libelle": "secretaire"
+    },
+    {
+      "id": "14f4",
+      "role": "medecin",
+      "login": "fatima@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "a6c9",
+      "role": "medecin",
+      "login": "fatima@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "88fa",
+      "role": "secretaire",
+      "login": "fatima@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "9863",
+      "role": "medecin",
+      "login": "fatima@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "6887",
+      "role": "medecin",
+      "login": "fatima@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "ab2e",
+      "role": "secretaire",
+      "login": "fatima@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "84e9",
+      "role": "secretaire",
+      "login": "abdou@gmail.com",
+      "password": "1111"
+    },
+    {
+      "id": "a688",
+      "role": "secretaire",
+      "login": "fatima@gmail.copm",
+      "password": "1234"
     }
   ]
 }
