@@ -7,6 +7,37 @@ document.addEventListener("DOMContentLoaded", async function () {
     const deleteBtn = document.getElementById("deleteBtn"); // Bouton de suppression
     const confirmDeleteModal = document.createElement("div"); // Création du modal de confirmation
 
+    function showMessage(message, type = "info") {
+        const messageContainer = document.getElementById("messageContainer");
+    
+        const messageElement = document.createElement("div");
+        messageElement.className = `p-4 rounded-lg shadow-lg text-white mb-4 flex items-center ${
+            type === "error" ? "bg-red-500" : 
+            type === "success" ? "bg-green-500" : 
+            "bg-blue-500"
+        }`;
+    
+        // Ajouter une icône
+        const icon = document.createElement("i");
+        icon.className = `ri-${
+            type === "error" ? "close-circle-line" : 
+            type === "success" ? "check-line" : 
+            "information-line"
+        } mr-2`;
+        messageElement.appendChild(icon);
+    
+        // Ajouter le texte
+        const text = document.createElement("span");
+        text.textContent = message;
+        messageElement.appendChild(text);
+    
+        messageContainer.appendChild(messageElement);
+    
+        setTimeout(() => {
+            messageElement.remove();
+        }, 5000);
+    }
+
 
 
     // Gestion de l'affichage du modal
@@ -123,18 +154,19 @@ document.addEventListener("DOMContentLoaded", async function () {
         const isPasswordUnique = !patients.some(patient => patient.password === password);
         const isPhoneUnique = !patients.some(patient => patient.telephone === phone);
 
+      
         if (!isEmailUnique) {
-            alert("Cet email est déjà utilisé par un autre patient.");
+            showMessage("Cet email est déjà utilisé par un autre patient.", "error");
             return;
         }
 
         if (!isPasswordUnique) {
-            alert("Ce mot de passe est déjà utilisé par un autre patient.");
+            showMessage("Ce mot de passe est déjà utilisé par un autre patient.", "error");
             return;
         }
 
         if (!isPhoneUnique) {
-            alert("Ce numéro de téléphone est déjà utilisé par un autre patient.");
+            showMessage("Ce numéro de téléphone est déjà utilisé par un autre patient.", "error");
             return;
         }
 
@@ -202,7 +234,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         // Création de l'objet patient
         let newPatient = {
-            id: newPatientId, // ID unique basé sur le timestamp
+            id: newPatientId, 
             prenom: prenom,
             nom: nom,
             genre: genre,
@@ -275,9 +307,11 @@ document.addEventListener("DOMContentLoaded", async function () {
     document.getElementById("deleteBtn").addEventListener("click", async function () {
         const checkboxes = document.querySelectorAll(".patient-checkbox:checked");
         if (checkboxes.length === 0) {
-            alert("Veuillez sélectionner au moins un patient à supprimer.");
+            showMessage("Veuillez sélectionner au moins un patient à supprimer.", "error");
             return;
         }
+        
+        
 
         showConfirmationModal(async function (confirm) {
             if (confirm) {
@@ -349,17 +383,17 @@ document.addEventListener("DOMContentLoaded", async function () {
         const isPhoneUnique = !patients.some(patient => patient.telephone === updatedPatient.telephone && patient.id !== patientId);
 
         if (!isEmailUnique) {
-            alert("Cet email est déjà utilisé par un autre patient.");
+            showMessage("Cet email est déjà utilisé par un autre patient.", "error");
             return;
         }
 
         if (!isPasswordUnique) {
-            alert("Ce mot de passe est déjà utilisé par un autre patient.");
+            showMessage("Ce mot de passe est déjà utilisé par un autre patient.", "error");
             return;
         }
 
         if (!isPhoneUnique) {
-            alert("Ce numéro de téléphone est déjà utilisé par un autre patient.");
+            showMessage("Ce numéro de téléphone est déjà utilisé par un autre patient.", "error");
             return;
         }
 

@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
 const menuButton = document.getElementById('menuButton');
 const sidebar = document.getElementById('sidebar');
 const mainContent = document.getElementById('mainContent');
