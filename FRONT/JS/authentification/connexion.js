@@ -26,7 +26,7 @@ document.getElementById("loginForm").addEventListener("submit", async function (
 
     if (!valid) return;
 
-    async function getJsonDataByKey(key) {
+     async function getJsonDataByKey(key) {
         const url = `http://localhost:3000/${key}`;
         try {
             const response = await fetch(url);
